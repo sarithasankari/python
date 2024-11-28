@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="python.css">
+</head>
+<body id="bo">
+    <h1 class="py">Python Course Notes</h1>
+<h4>1. Introduction to Python</h4>
+<tr>
+<li class="sari">What is Python?</li>
+<li>High-level, interpreted, and general-purpose programming language.</li>
+<li>Emphasizes code readability and simplicity.</li>
+<li>Popular for web development, data science, automation, etc.</li>
+<li class="two">Key Features:</li>
+<li> to learn and write.</li>
+<li>Extensive libraries (e.g., NumPy, pandas).</li>
+<li>Cross-platform compatibility.</li>
+<li>Community support.</li>
+<div><li class="three">Installation:</li>
+<li>Download from python.org.</li>
+<li>Use an IDE (e.g., PyCharm, VSCode) or Jupyter Notebook for coding.</li></div></tr>
+<div class="pyb"><h3>2. Python Basics</h3>
+<h3>Syntax and Structure:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+
+<tr><td>print("Hello, World!")  # Output: Hello, World!</td></tr></table><br>
+<table>
+    <tr>
+    <th>python</th></tr>
+<tr><td>x = 10 <br>
+name = "Alice"<br>
+is_active = True</td></tr></table>
+
+<div class="di"><li>Data Types:</li>
+
+<li>Numeric: int, float, complex</li>
+<li>Text: str</li>
+<li>Boolean: bool</li>
+<li>Collection: list, tuple, set, dict</li>
+<li>Type Conversion:</li></div>
+<table>
+    <tr>
+    <th>python</th></tr>
+<tr><td>int("5")  # Converts string to integer
+float(10)  # Converts integer to float</td></tr></table>
+<h3>3. Control Structures</h3>
+<li>Conditional Statements:</li>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+<tr><td>if age >= 18:<br>
+    print("Adult")<br>
+elif age >= 13:<br>
+    print("Teen")<br>
+else:<br>
+    print("Child")</td></tr></table>
+<li>Loops:</li>
+
+<h3>for loop:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>for i in range(5):<br>
+    print(i)</td></tr></table>
+<h3>while loop:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+<tr><td>count = 0<br>
+while count < 5:<br>
+    print(count)<br>
+    count += 1 </td></tr></table>
+<h3>4. Functions</h3>
+<h3>Defining and Calling Functions:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+<tr><td>
+ greet(name):<br>
+    return f"Hello, {name}!"<br>
+
+print(greet("Alice"))</td></tr></table>
+<h3>Default Arguments:</h3>
+
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>def greet(name="World"):<br>
+    return f"Hello, {name}!"</td></tr></table>
+<h3>5. Collections</h3>
+<h3>Lists:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+<tr><td>fruits = ["apple", "banana", "cherry"]<br>
+fruits.append("date")<br>
+print(fruits)</td></tr></table>
+<h3>Dictionaries:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+person = {"name": "Alice", "age": 25}<br>
+print(person["name"])</td></tr></table>
+<h3>Sets:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+nums = {1, 2, 3}<br>
+nums.add(4)</td></tr></table>
+<h3>Tuples:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+colors = ("red", "green", "blue")</td></tr></table>
+<h3>6. Object-Oriented Programming (OOP)<br>
+Classes and Objects:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+class Person:<br>
+    def __init__(self, name, age):<br>
+        self.name = name<br>
+        self.age = age<br>
+
+    def greet(self):<br>
+        return f"Hi, I'm {self.name}."<br>
+
+person = Person("Alice", 25)<br>
+print(person.greet())</td></tr></table>
+<h3>7. File Handling</h3>
+<h3>Reading Files:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+with open("file.txt", "r") as file:<br>
+    content = file.read()</td></tr></table>
+<h3>Writing Files:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+with open("file.txt", "w") as file:<br>
+    file.write("Hello, World!")</td></tr></table>
+<h3>8. Exception Handling</h3>
+<h3>Try-Except Blocks:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+try:<br>
+    result = 10 / 0<br>
+except ZeroDivisionError:<br>
+    print("Cannot divide by zero!")</td></tr></table>
+<h3>9. Libraries and Modules</h3>
+<h3>Importing:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+import math
+print(math.sqrt(16))</td></tr></table>
+<h3>Popular Libraries:</h3>
+
+<li>NumPy: Numerical computations.</li>
+<li>pandas: Data analysis.</li>
+<li>matplotlib: Plotting and visualization.</li>
+<h3>10. Additional Topics</h3>
+<h3>List Comprehensions:</h3>
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+squares = [x**2 for x in range(10)]</td></tr></table>
+<h3>Lambda Functions:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>
+add = lambda x, y: x + y
+print(add(3, 5))</td></tr></table>
+<h3>Working with APIs:</h3>
+
+<table>
+    <tr>
+    <th>python</th></tr>
+    <tr><td>import requests<br>
+response = requests.get<br>("https://api.example.com/data")<br>
+print(response.json())<br>
+</td></tr></table>
+</div>
+</body>
+</html>

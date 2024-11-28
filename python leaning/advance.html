@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="python.css">
+</head>
+<body>
+    <div class="advance">
+   <h1>1. Decorators</h1>
+<li><i>Definition:</i> Decorators are a way to modify or extend the behavior of functions or methods without changing their actual code.</li>
+<li><i>Usage:</i> They're often used for logging, enforcing access control, instrumentation, and more.</li>
+<h3>Example:</h3>
+<table>
+    <tr><th>python</th></tr>
+<tr><td>def decorator(func):<br>
+    def wrapper():<br>
+        print("Before function call")<br>
+        func()<br>
+        print("After function call")<br>
+    return wrapper<br>
+
+@decorator<br>
+def say_hello():<br>
+    print("Hello")<br>
+
+say_hello()</td></tr>
+</table>
+<h1>2. Context Managers</h1>
+<li><i>Definition:</i> Context managers allow you to allocate and release resources precisely when you want to.</li>
+<li><i>Usage:</i> They're typically used with the with statement for resource management (e.g., file handling, database connections).</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>class MyContextManager:<br>
+    def __enter__(self):<br>
+        print("Entering the context")<br>
+        return self<br>
+
+    def __exit__(self, exc_type, exc_value, traceback):<br>
+        print("Exiting the context")<br>
+
+with MyContextManager():<br>
+    print("Inside the context")</td></tr></table>
+<h1>3. Metaclasses</h1>
+<li><i>Definition:</i> A metaclass defines the behavior of a class. It's the "class of a class."</li>
+<li><i>Usage:</i> Used for dynamically creating classes, adding attributes, and more complex custom behaviors at the class level.</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>class Meta(type):<br>
+    def __new__(cls, name, bases, dct):<br>
+        dct['custom_attr'] = 'Hello from Meta'<br>
+        return super().__new__(cls, name, bases, dct)<br>
+
+class MyClass(metaclass=Meta):<br>
+    pass<br>
+
+obj = MyClass()<br>
+print(obj.custom_attr)</td></tr></table>
+<h1>4. Generators and Iterators</h1>
+<li><i>Definition:</i> Generators are special types of iterators that allow you to iterate over data lazily (i.e., one item at a time) without loading all the data into memory.</li>
+<li><i>Usage:</i> Useful when working with large datasets or streams.</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>def count_up_to(max):<br>
+    count = 1<br>
+    while count <= max:<br>
+        yield count<br>
+        count += 1<br>
+
+counter = count_up_to(5)<br>
+for num in counter:<br>
+    print(num)</td></tr></table>
+<h1>5. Concurrency (Threading, Multiprocessing)</h1>
+<li><i>Definition:</i> Python offers multiple approaches for concurrent programming, including threads and processes.</li>
+<li><i>Usage:</i> Threads are best for I/O-bound tasks, while processes are better for CPU-bound tasks.</li>
+<h3>Example (Threading):</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>import threading<br>
+
+def print_numbers():<br>
+    for i in range(5):<br>
+        print(i)<br>
+
+thread = threading.Thread<br>(target=print_numbers)<br>
+thread.start()<br>
+thread.join()  <br># Wait for thread to finish<br></td></tr></table><br>
+<h3>Example: (Multiprocessing):</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>mport multiprocessing<br>
+
+def print_numbers():<br>
+    for i in range(5):<br>
+        print(i)<br>
+
+process = multiprocessing.<br>Process(target=<br>print_numbers)
+process.start()<br>
+process.join()  # Wait for <br>process to finish</td></tr></table>
+<h1>6. Asyncio</h1>
+<li><i>Definition:</i> Asyncio is a library for writing concurrent code using the async and await keywords. It's used for asynchronous I/O-bound tasks like web scraping, network applications, etc.</li>
+<li><i>Usage:</i> Enables single-threaded, asynchronous programming with event loops.</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>import asyncio<br>
+
+async def fetch_data():<br>
+    print("Fetching data...")<br>
+    await asyncio.sleep(2)<br>
+    print("Data fetched!")<br>
+
+async def main():<br>
+    await fetch_data()<br>
+
+asyncio.run(main())</td></tr></table>
+<h1>7. Type Hints and Annotations</h1>
+<li><i>Definition:</i> Python supports optional type annotations to help with static analysis, readability, and code reliability.</li>
+<li><i>Usage:</i> They can be used to specify function argument types, return types, and variables.</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>def greet(name: str) -> str:<br>
+    return f"Hello, {name}"<br>
+
+greeting = greet("Alice")<br>
+print(greeting)</td></tr></table>
+<h1>8. Functional Programming in Python</h1>
+<li><i>Definition:</i> Python supports some aspects of functional programming, such as first-class functions, map(), filter(), and reduce().</li>
+<li><i>Usage:</i> You can use these functions to avoid explicit loops and keep your code concise.</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>from functools import reduce<br>
+
+numbers = [1, 2, 3, 4, 5]<br>
+total = reduce(lambda x, y: x + y, numbers)<br>
+print(total)</td></tr>
+</table>
+<h1>9. Advanced Data Structures (e.g., collections module)</h1>
+<li><i>Definition:</i> Python’s collections module provides specialized data structures like deque, Counter, defaultdict, and OrderedDict.</li>
+<li><i>Usage:</i> These structures can be more efficient or expressive than built-in types for certain tasks.</li>
+<h3>Example:</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>from collections import Counter<br>
+
+words = ["apple", "banana", "apple", "cherry"]<br>
+count = Counter(words)<br>
+print(count)</td></tr></table>
+<h1>10. Design Patterns</h1>
+<li><i>Definition:</i> Design patterns are common solutions to recurring software design problems. Python supports patterns like Singleton, Factory, Observer, and more.
+<li><i>Usage:</i> These patterns help write maintainable and reusable code.</li>
+<h3>Example (Singleton):</h3>
+<table>
+<tr><th>python</th></tr>
+<tr><td>class Singleton:<br>
+    _instance = None<br>
+
+    def __new__(cls):<br>
+        if cls._instance is None:<br>
+            cls._instance = super().__new__(cls)<br>
+        return cls._instance<br>
+
+obj1 = Singleton()<br>
+obj2 = Singleton()<br>
+print(obj1 is obj2)  # True</td></tr></table>
+<h1>11. Cython for Performance Optimization</h1>
+<li><i>Definition:</i> Cython is a superset of Python that allows you to compile Python code to C for improved performance.</li>
+<li><i>Usage:</i> Useful for performance-critical code, such as numerical computations.</li>
+<h1>12. Python Memory Management & Garbage Collection</h1>
+<li><i>Definition:</i> Python uses automatic memory management and garbage collection to reclaim memory used by objects that are no longer in use.</li>
+<li><i>Usage:</i> Knowing how Python handles memory can help you optimize the performance and reduce memory leaks.</li>
+</div>
+</body>
+</html>
